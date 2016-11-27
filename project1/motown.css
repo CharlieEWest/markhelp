@@ -1,0 +1,47 @@
+.jumbotron,
+.footer {
+    background-color: green;
+    text-align: center;
+    color: yellow;
+}
+
+.btn {
+    background-color: red;
+    color: yellow;
+}
+
+.list-group-item-success {
+    background-color: yellow;
+    color: yellow;
+}
+
+.list-group-item-info {
+    background-color: red;
+    color: yellow;
+}
+
+.list-group-item-warning {
+    background-color: yellow;
+    color: yellow;
+}
+
+.list-group-item-danger {
+    background-color: red;
+    color: yellow;
+}
+
+a.text-success:hover,
+a.text-success:focus {
+  color: red;
+
+}
+
+a.list-group-item-success, a.list-group-item-warning, a.list-group-item-danger, a.list-group-item-info {
+	color: white;
+}
+
+a.list-group-item-success:hover {
+	color:yellow;
+}
+
+body {padding-top:100px;}
