@@ -37,11 +37,15 @@ a.text-success:focus {
 }
 
 a.list-group-item-success, a.list-group-item-warning, a.list-group-item-danger, a.list-group-item-info {
-	color: white;
+    color: white;
 }
 
 a.list-group-item-success:hover {
-	color:yellow;
+    color:yellow;
 }
 
-body {padding-top:100px;}
+body {padding-top:50px;}
+
+.motown {
+    color: "red";
+} 
