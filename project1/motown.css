@@ -1,51 +1,12 @@
-.jumbotron,
-.footer {
-    background-color: green;
-    text-align: center;
-    color: yellow;
-}
+$('button').on('click',function(){
+            var x = $(this).data("search");
 
-.btn {
-    background-color: red;
-    color: yellow;
-}
-
-.list-group-item-success {
-    background-color: yellow;
-    color: yellow;
-}
-
-.list-group-item-info {
-    background-color: red;
-    color: yellow;
-}
-
-.list-group-item-warning {
-    background-color: yellow;
-    color: yellow;
-}
-
-.list-group-item-danger {
-    background-color: red;
-    color: yellow;
-}
-
-a.text-success:hover,
-a.text-success:focus {
-  color: red;
-
-}
-
-a.list-group-item-success, a.list-group-item-warning, a.list-group-item-danger, a.list-group-item-info {
-    color: white;
-}
-
-a.list-group-item-success:hover {
-    color:yellow;
-}
-
-body {padding-top:50px;}
-
-.motown {
-    color: "red";
-} 
+            var queryURL = "http://api.giphy.com/v1/gifs/search?q="+x+"&api_key=dc6zaTOxFJmzC";
+        console.log(queryURL);
+        $.ajax({url:queryURL,method:'GET'})
+            .done(function(response){
+                console.log(response);
+                $('ajaxmotown').append("<p>Rating: "+response.data[1].Rating+",</p>");
+                $('ajaxmotown').append("<img src='"+response.data[1].images.downsized.url+"'>")
+            })
+        });

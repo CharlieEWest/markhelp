@@ -38,18 +38,19 @@ function validateForm() {
         return false;
     }
 }
-$('button').on('click',function(){
-			var x = $(this).data("search");
-
-			var queryURL = "http://api.giphy.com/v1/gifs/search?q="+x+"&api_key=dc6zaTOxFJmzC";
-		console.log(queryURL);
-		$.ajax({url:queryURL,method:'GET'})
-			.done(function(response){
-				console.log(response);
-				$('ajaxmotown').append("<p>Rating: "+response.data[1].Rating+",</p>");
-				$('ajaxmotown').append("<img src='"+response.data[1].images.downsized.url+"'>")
-			})
-		})
+// test for firebase 
+//$('button').on('click',function(){
+//			var x = $(this).data("search");
+//
+//			var queryURL = "http://api.giphy.com/v1/gifs/search?q="+x+"&api_key=dc6zaTOxFJmzC";
+//		console.log(queryURL);
+//		$.ajax({url:queryURL,method:'GET'})
+//		.done(function(response){
+//				console.log(response);
+//				$('ajaxmotown').append("<p>Rating: "+response.data[1].Rating+",</p>");
+//				$('ajaxmotown').append("<img src='"+response.data[1].images.downsized.url+"'>")
+//			})
+//		})
 
 
 
@@ -63,7 +64,18 @@ $('button').on('click',function(){
     messagingSenderId: "773242203800"
   };
   firebase.initializeApp(config);
+//get element
+const preObject = doucument.getElementById('ojbect');
 
+//create refereence
+const dbRefObject = firebase.database().ref().child('ojbect');
+
+x
+
+
+//sync object changes
+dbRefObject.on('value', snap => condole.log(snap.val()));
+}();
 
 // Get elements
  const txtEmail = document.getElementById('txtEmail');
